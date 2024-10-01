@@ -87,7 +87,8 @@ def makeobj(xyz,molformat='mol',style='stick',background='white'):
     """
     xyzview = py3Dmol.view()
     xyzview.addModel(xyz,molformat)
-    xyzview.setStyle({style:{}})
+    #xyzview.setStyle({style:{}})
+    xyzview.setStyle({}, {'cartoon': {'colorscheme': {'prop': 'b', 'gradient': 'roygb', 'min': 0, 'max': 100}}})
     xyzview.setBackgroundColor(background)
     xyzview.zoomTo()
     return xyzview
